@@ -6,7 +6,7 @@ from smtplib import SMTP
 
 from flask import Flask, flash, render_template, request
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates", static_folder="static")
 app.secret_key = os.environ.get("SECRET_KEY", "my-secret-key-change-this")
 
 CONTACT_MESSAGES: list[dict[str, str]] = []
